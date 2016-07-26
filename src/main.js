@@ -14,7 +14,7 @@ $('document').ready(function() {
       $('.well').style('visibility', 'visible');
       var genreArray = movie.genre.split(', ');
       for (genre in genreArray) {
-        $('#genres').append('<option name="' + genre + '">' + genre + '</option>')
+        $('#genres').append('<option>' + genre + '</option>')
       }
     }).catch(function(error) {
       console.log(error);
