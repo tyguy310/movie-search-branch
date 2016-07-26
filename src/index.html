@@ -16,16 +16,21 @@
           <input type="text" class="form-control required text-center col-xs-6" id="movieSearch" placeholder="Movie">
         </div>
 
-        <button type="submit" class="btn btn-danger">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
 
         <div class="form-group ">
           <select class="form-control">
-            <option value="">Select something</option>
+            <optgroup label="Select Genre" id="genres"></optgroup>
           </select>
         </div>
 
       </form>
     </div>
+
+    <div class="well" style="visibility:hidden">
+      <img id="poster">
+    </div>
+
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
