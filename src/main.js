@@ -1,4 +1,5 @@
 $('document').ready(function() {
+  console.log('Sanity check');
   $('form').on('submit', function(event) {
     event.preventDefault();
     var movieTitle = $('#movieSearch').val().split(' ').join('+');
@@ -9,7 +10,12 @@ $('document').ready(function() {
     $.ajax ({
       url: 'http://www.omdbapi.com/?t=' + movie
     }).done(function(movie) {
-      console.log(movie);
+      $('#poster').src(movie.poster);
+      $('.well').style('visibility', 'visible');
+      var genreArray = movie.genre.split(', ');
+      for (genre in genreArray) {
+        $('#genres').append('<option name="' + genre + '">' + genre + '</option>')
+      }
     }).catch(function(error) {
       console.log(error);
     });
