@@ -10,11 +10,11 @@ $('document').ready(function() {
     $.ajax ({
       url: 'http://www.omdbapi.com/?t=' + movie
     }).done(function(movie) {
-      $('#poster').src(movie.poster);
-      $('.well').style('visibility', 'visible');
-      var genreArray = movie.genre.split(', ');
-      for (genre in genreArray) {
-        $('#genres').append('<option>' + genre + '</option>')
+      $('#poster').append('<img src="' + movie.Poster + '"></img>')
+      $('.well').css('visibility', 'visible');
+      var genreArray = movie.Genre.split(', ');
+      for (i = 0; i < genreArray.length; i++) {
+        $('#genres').append('<option>' + genreArray[i] + '</option>')
       }
     }).catch(function(error) {
       console.log(error);
