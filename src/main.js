@@ -1,4 +1,5 @@
 $('document').ready(function() {
+  console.log('Sanity check');
   $('form').on('submit', function(event) {
     event.preventDefault();
     var movieTitle = $('#movieSearch').val().split(' ').join('+');
